@@ -12,7 +12,6 @@ public class Logica {
 	
 	public PApplet app = Main.app;
 
-	private ArrayList<Imags> imags;
 	private ArrayList<Homero> homeros;
 
 	private PImage[] homero;
@@ -27,7 +26,10 @@ public class Logica {
 
 	public void ejecutar() {
 		
+
 		app.rect(0,0,200,700);
+		app.rect(50,600,50,50);
+		app.rect(100,600,50,50);
 		
 		switch (pantalla) {
 		case 0: {
@@ -38,7 +40,7 @@ public class Logica {
 		case 1: {
 			for (int i = 0; i < 1; i++) {
 				homero[i] = app.loadImage("homero.png");
-				//// homero.add(new Imags(100, (int) app.random(50, 650), homero, this));
+				//homero.add(new Imags(100, (int) app.random(50, 650), homero, this));
 
 				// inicia hilo
 				// homero.get(i).start();
@@ -54,32 +56,33 @@ public class Logica {
 	public void clickear(int pmouseX, int pmouseY) {
 		// Creo Homeros con el click
 		if (cantidad < 4) {
-			homeros.add(new Homero((int) app.mouseX, (int) app.mouseY));
+			//homeros.add(new Homero((int) app.mouseX, (int) app.mouseY));
 			cantidad++;
 		}
 
 	}
 
 	public void inicializar() {
-		/*
-		 * // Inicializo los int cantidad = 4; pantalla = 0;
-		 * 
-		 * // Inicializo los arreglos homero = new PImage[1];
-		 * 
-		 * Inicializo los arraylist 
-		 * imags = new ArrayList<Imags>();
-		 * 
-		 * 
-		 * // Cargo las imagenes y creo los personajes 
-		 * 
-		 * for (int i = 0; i < 1; i++) {
-		 * homero[i] = app.loadImage("homero_simpson.png"); PImage imaUn = homero[i];
-		 * //homero.add(new Imags((int) app.random(50, 400), (int) app.random(50, 650),
-		 * homero, this));
-		 * 
-		 * 
-		 * }
-		 */
+		
+		  // Inicializo los int cantidad = 4; pantalla = 0;
+		  
+		  // Inicializo los arreglos homero = new PImage[1];
+		  
+		  //Inicializo los arraylist 
+		  homeros = new ArrayList<Homero>();
+		  
+		  
+		  // Cargo las imagenes y creo los personajes 
+		  
+		  for (int i = 0; i < 1; i++) {
+		  //homero[i] = app.loadImage("homero_simpson.png"); 
+		  
+		 /* PImage homero = homeros[i];
+		  homero.add(new Imags((int) app.random(50, 400), (int) app.random(50, 650),homero, this));
+		  */
+		  
+		  }
+		 
 
 		// Cargo las imagenes
 		// imags[3] = app.loadImage("../data/bart_simpson.png");
@@ -91,17 +94,13 @@ public class Logica {
 
 	public void iniciarHilos() {
 		// Con este metodo inicio los hilos
-		/*
-		 * for (int i = 0; i < .size(); i++) { Imags b = imags.get(i); b.start(); }
-		 */
+		
+		  //for (int i = 0; i < .size(); i++) { Imags b = imags.get(i); b.start(); }
+		 
 
 	}
-
-	public ArrayList<Imags> getImags() {
-		return imags;
-	}
-
 	
+
 	public ArrayList<Homero> getHomeros() {
 		return homeros;
 	}
@@ -117,10 +116,6 @@ public class Logica {
 	
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
-	}
-
-	public void setImags(ArrayList<Imags> imags) {
-		this.imags = imags;
 	}
 
 	
