@@ -73,7 +73,6 @@ public class Logica {
 		homeros = new ArrayList<Homero>();
 
 		// Cargo los personajes
-
 		for (int i = 0; i < 3; i++) {
 			imaHomero[i] = app.loadImage("homero.png");
 			PImage imaHom = imaHomero[i];
