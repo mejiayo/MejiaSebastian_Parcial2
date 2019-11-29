@@ -16,6 +16,8 @@ public class Personaje {
 	protected Logica log;
 	protected PApplet app;
 	
+	//private ArrayList <Imags> Homero;
+	
 	public Personaje (int posX, int posY, PImage imagen, Logica log) {
 		this.posX = posX;
 		this.posY = posY;
@@ -33,7 +35,6 @@ public class Personaje {
 	public void mover() {
 
 		posX += velX;
-		posY += velY;
 
 	}
 	// 	Para que quede en pantalla
@@ -45,14 +46,6 @@ public class Personaje {
 
 			if (posX + velX > 1200 - tamX / 2) {
 				velX *= -1;
-			}
-
-			if (posY + velY < 0 + tamY / 2) {
-				velY *= -1;
-			}
-
-			if (posY + velY > 700 - tamY / 2) {
-				velY *= -1;
 			}
 		}
 		
@@ -74,13 +67,6 @@ public class Personaje {
 		}
 		public void setVelX(float velX) {
 			this.velX = velX;
-		}
-
-		public float getVelY() {
-			return velY;
-		}
-		public void setVelY(float velY) {
-			this.velY = velY;
 		}
 
 }

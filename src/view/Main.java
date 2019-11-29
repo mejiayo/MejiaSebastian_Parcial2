@@ -10,6 +10,7 @@ public class Main extends PApplet{
 
 	public static PApplet app;
 	
+	//crear objetos
 	Logica log;
 
 	
@@ -27,7 +28,9 @@ public class Main extends PApplet{
 		log.ejecutar();
 		
 	}
-
 	
+	public void mouseClicked() {
+		log.clickear(pmouseX, pmouseY);
+	}
 	
 }
